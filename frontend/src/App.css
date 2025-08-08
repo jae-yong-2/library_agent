@@ -1,8 +1,25 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+html, body, #root { height: 100%; margin: 0; }
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr; /* header(nav) + main */
+  min-height: 100vh;
+}
+
+/* 중앙 정렬용 공통 클래스 */
+.page-center {
+  min-height: calc(100vh - 56px); /* 대략 네비 높이만큼 보정 */
+  display: grid;
+  place-items: center;            /* 수평/수직 중앙 */
+  padding: 24px;
   text-align: center;
+}
+
+/* 테이블이 넓을 때도 가운데 보이게 */
+.table-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
 }
 
 .logo {
